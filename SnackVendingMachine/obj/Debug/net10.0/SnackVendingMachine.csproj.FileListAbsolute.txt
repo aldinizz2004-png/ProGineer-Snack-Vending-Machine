@@ -1,0 +1,14 @@
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\bin\Debug\net10.0\SnackVendingMachine.exe
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\bin\Debug\net10.0\SnackVendingMachine.deps.json
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\bin\Debug\net10.0\SnackVendingMachine.runtimeconfig.json
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\bin\Debug\net10.0\SnackVendingMachine.dll
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\bin\Debug\net10.0\SnackVendingMachine.pdb
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\SnackVendingMachine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\SnackVendingMachine.AssemblyInfoInputs.cache
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\SnackVendingMachine.AssemblyInfo.cs
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\SnackVendingMachine.csproj.CoreCompileInputs.cache
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\SnackVendingMachine.dll
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\refint\SnackVendingMachine.dll
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\SnackVendingMachine.pdb
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\SnackVendingMachine.genruntimeconfig.cache
+C:\Users\Asus i7\Desktop\Task_1_OOP\SnackVendingMachine\obj\Debug\net10.0\ref\SnackVendingMachine.dll
