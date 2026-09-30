@@ -1,0 +1,113 @@
+classDiagram
+direction TB
+
+%% ===================== State Pattern =====================
+class IMachineState {
+    <<interface>>
+    +SelectItem(SnackMachine machine, int code)
+    +InsertPayment(SnackMachine machine, Payment payment)
+    +Cancel(SnackMachine machine)
+}
+class IdleState
+class PaymentState
+class DispensingState
+
+IMachineState <|.. IdleState
+IMachineState <|.. PaymentState
+IMachineState <|.. DispensingState
+
+%% ===================== Context =====================
+class SnackMachine {
+    -Inventory _inventory
+    -CashVault _cashVault
+    -IDisplay _display
+    -IDispenser _dispenser
+    -IMachineState _state
+    -int? _selectedCode
+    -decimal _balance
+    -decimal _cashBalance
+    +decimal CurrentBalance
+    +SnackMachine(inventory Inventory, cashVault CashVault, display IDisplay, dispenser IDispenser)
+    +SelectItem(int code)
+    +InsertPayment(Payment payment)
+    +Cancel()
+    +SetSelectedItem(int code)
+    +AddPayment(Payment payment)
+    +CompleteSale()
+    +CancelCurrentPurchase()
+}
+
+SnackMachine "1" --> "1" IMachineState : _state
+SnackMachine "1" --> "1" IDisplay : _display
+SnackMachine "1" --> "1" IDispenser : _dispenser
+SnackMachine "1" --> "1" Inventory : _inventory
+SnackMachine "1" --> "1" CashVault : _cashVault
+SnackMachine ..> Payment : uses
+SnackMachine ..> VendingException : throws
+
+%% ===================== Hardware Abstractions =====================
+class IDisplay {
+    <<interface>>
+    +Show(string message)
+}
+class ConsoleDisplay {
+    +Show(string message)
+}
+IDisplay <|.. ConsoleDisplay
+
+class IDispenser {
+    <<interface>>
+    +Dispense(int slotCode)
+}
+class ConsoleDispenser {
+    +Dispense(int slotCode)
+}
+IDispenser <|.. ConsoleDispenser
+
+%% ===================== Inventory / Slot / Snack =====================
+class Inventory {
+    -Dictionary~int,Slot~ _slots
+    +Inventory()
+    +AddSlot(int code)
+    +GetSlot(int code) Slot
+    +Restock(int code, Snack snack, int quantity)
+}
+
+class Slot {
+    -Stack~Snack~ _snacks
+    +int Code
+    +int Stock
+    +Slot(int code)
+    +AddSnack(Snack snack)
+    +PeekSnack() Snack
+    +DispenseOne() Snack
+}
+
+class Snack {
+    +string Name
+    +long PriceCents
+    +Snack(name string, priceCents long)
+}
+
+Inventory "1" *-- "0..*" Slot : _slots
+Slot "1" *-- "0..*" Snack : _snacks
+
+%% ===================== Payment / CashVault =====================
+class Payment {
+    +string Type
+    +decimal Amount
+    +Payment(type string, amount decimal)
+    +Validate()
+}
+
+class CashVault {
+    -SortedDictionary~decimal,int~ _stock
+    +CashVault()
+    +Deposit(decimal denomination, int count)
+    +CanMakeChange(decimal amount) bool
+    +MakeChange(decimal amount) Dictionary~decimal,int~
+}
+
+class VendingException {
+    +VendingException(string message)
+}
